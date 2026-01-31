@@ -1,0 +1,27 @@
+<html>
+<head>
+    <title><%= @page_title %></title>
+</head>
+<body>
+    <h1>Welcome, <%= @user_name %>!</h1>
+    <form action="/new" method="get" accept-charset="UTF-8">
+      <label for="email">Email:</label>
+      <input type="text" id="email" name="email"><br><br> 
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username"><br><br> 
+      <label for="password">Password:</label>
+      <input type="text" id="password" name="password"><br><br>
+    </form>
+    <%# This is a comment, it will not be in the output %>
+    
+    <% if @items.any? %>
+        <ul>
+            <% @items.each do |item| %>
+                <li><%= item %></li>
+            <% end %>
+        </ul>
+    <% else %>
+        <p>No items found.</p>
+    <% end %>
+</body>
+</html>
