@@ -1,3 +1,17 @@
+<%= form_tag("/users", method: "post") do %>
+ <%= label_tag(":user[username]", "Username") %>
+ <%= text_field_tag(":user[username]") %><br>
+
+ <%= label_tag(":user[email]", "Email") %>
+ <%= email_field_tag(":user[email]") %><br> 
+
+ <%= label_tag(":user[password]", "Password") %>
+ <%= password_field_tag(":user[password]") %><br>
+
+ <%= submit_tag("Submit") %>
+<% end %>
+
+<!-- 
 <html>
 <head>
     <title><%= @page_title %></title>
@@ -5,7 +19,7 @@
 <body>
     <h1>Welcome, <%= @user_name %>!</h1>
     <form action="/users" method="post" accept-charset="UTF-8">
-    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <%# <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>"> %>
 
     <label for="email">Email:</label>
     <input type="text" id="email" name="user[email]"><br><br> 
@@ -21,3 +35,4 @@
 
 </body>
 </html>
+-->
